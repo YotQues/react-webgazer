@@ -68,3 +68,13 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+### @inproceedings{papoutsaki2016webgazer,
+  author = {Alexandra Papoutsaki and Patsorn Sangkloy and James Laskey and Nediyana Daskalova and Jeff Huang and James Hays},
+  title = {WebGazer: Scalable Webcam Eye Tracking Using User Interactions},
+  booktitle = {Proceedings of the 25th International Joint Conference on Artificial Intelligence (IJCAI)},
+  pages = {3839--3845},
+  year = {2016},
+  organization={AAAI}
+}

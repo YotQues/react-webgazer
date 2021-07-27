@@ -1,12 +1,24 @@
+import { useEffect } from 'react';
 import './App.css';
-import WebGazerTest from './Components/WebGazerTest';
-
+import WebgazerInit, { fastInit } from "./Components/WebGazerTest";
 
 function App() {
+  // const webgazer = useWebgazer();
+  useEffect(() => {
+    console.log(typeof fastInit);
+
+    // console.log(webgazer);
+    /* webgazer
+      .setGazeListener((data, timestamp) => {
+        console.log(data, timestamp);
+      })
+      .begin();
+
+    webgazer.showVideo(true); */
+  })
   return (
     <div>
-      App Works
-      <WebGazerTest />
+      <WebgazerInit callbacks={[fastInit]} />
     </div>
   );
 }

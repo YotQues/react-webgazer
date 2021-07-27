@@ -1,13 +1,28 @@
-import React from 'react';
-import webgazer from 'webgazer';
+// import webgazer from "webgazer";
+import LoadScriptTag from './LoadScriptTag';
 
-function WebGazerTest(props) {
+const WebgazerInit = (props) => {
+  console.log(props)
+  const onLoaded = () => {
+    const { webgazer } = window;
+    props.callbacks.forEach(callback => callback(webgazer))
 
-  console.log(webgazer);
+  }
 
   return (
-    <div>WebGazerTest works</div>
+    <LoadScriptTag id="wg" src={"https://webgazer.cs.brown.edu/webgazer.js?"} initCode={onLoaded} />
   );
-};
+}
+const defaultFastInitCallback = (data, timestamp) => console.log(data, timestamp);
 
-export default WebGazerTest;
+export const fastInit = (webgazer, callback = defaultFastInitCallback) => {
+  webgazer
+    .setGazeListener((data, timestamp) => {
+      callback(data, timestamp)
+    })
+    .begin();
+
+  webgazer.showVideo(true);
+}
+
+export default WebgazerInit;
